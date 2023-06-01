@@ -1,0 +1,52 @@
+<html>
+    <head>
+        
+        <title>Personal Details</title>
+        <style>
+            #photo {
+                width: 250px;
+                height: 250px;
+                border-radius: 50%;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+         <center>   
+        <img id="Photo" src="C:\Users\Mithra Reddy\Downloads\IMG_8969.jpg" alt="My Photo"> 
+         
+        <h1><u>Personal Details</u></h1> 
+        <p><strong>FirstName:</strong> <span id="FirstName"></span></p>
+        <p><strong>LastName:</strong> <span id="LastName"></span></p>
+        <p><strong>DOB:</strong> <span id="DOB"></span></p>
+    <center>
+    </div>
+        <script>
+        const PersonalDetails = {
+            FirstName : 'Sangamithra',
+            LastName : 'Vanga',
+            DOB : '04/08/1999',
+            Gender : 'Female',
+            Height : '5-4',
+            ContactNo : '816-562-7678',
+            EmailID : 'mithraxxxx@gmail.com',
+            Address : 'Frisco, Texas',
+            Zipcode : '76227',
+            Hobbies : ["Drawing","Cooking"," Reading"," Watching Tv",{Games : ["Badminton","Throwball","Carrom","Chess"]},
+           { Achievements : ["Throwball Winner","Graduated"]},"Photography"],
+            Photo : "IMG_8969.jpg"
+        };
+        document.getElementById("FirstName").textContent = PersonalDetails.FirstName;
+        document.getElementById("LastName").textContent = PersonalDetails.LastName;
+        document.getElementById("DOB").textContent = PersonalDetails.DOB;
+        //document.getElementById("email").textContent = personalDetails.email;
+        
+        const lastHobby = PersonalDetails.Hobbies[PersonalDetails.Hobbies.length - 1];
+      //  document.getElementById("lastHobby").textContent = lastHobby;
+      console.log("Last Hobby: " + lastHobby);
+
+        //const photo = document.getElementById("photo");
+       // photo.src = "C:\Users\Mithra Reddy\Downloads\IMG_8969.jpg"; 
+        </script>
+    </body>
+</html>
