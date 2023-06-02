@@ -1,0 +1,35 @@
+<html>
+<head>
+    <script>
+        var environment = ['dev', 'stage', 'prod', 'test'];
+        for (let i = 0; i < environment.length; i++) {
+            const element = environment[i];
+           // log(element);
+ 
+            const amount = 100;
+            let sendAmount = amount;
+
+            if (element === 'dev') {
+                sendAmount = amount + 10;
+            } else if (element === 'stage') {
+                sendAmount = amount + 30;
+            } else if (element === 'test') {
+                sendAmount = amount + 20;
+            } else if (element === 'prod') {
+                sendAmount = amount + 5;
+            }
+            log('Sending amount for '  + element + ': ' + sendAmount);
+       }
+
+       function log(v) {
+            console.log(v);
+       }  
+    </script>
+</head>
+<body>
+    <h1>Hi Hello!</h1>
+    <div>
+        <p>The Sending Amount is displayed in the console.</p>
+    </div>
+</body>
+</html>
