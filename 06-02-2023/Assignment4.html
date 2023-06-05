@@ -1,11 +1,29 @@
 <head>
-  <title>Hobbies</title>
+  <title>Displaying Hobbies using functions</title>
+  <style>
+    #photo {
+        width: 250px;
+        height: 250px;
+        border-radius: 50%;
+    }
+</style>
 </head>
 <body>
-  <div name="hob"></div>
+  
+  <div name="hobbies">
+
+    <center> 
+      
+    <img id="Photo" src="C:\Users\Mithra Reddy\Downloads\IMG_8969.jpg" alt="My Photo"> 
+    <h1><u>Mithra Reddy</u></h1>
+    <h2>Displaying hobbies in Console using functions:</h2>
+
+    <center> 
+  </div>
   <script>
-      function hobby(hob){
-         hob.toString();
+    var h=['Drawing','Cooking','Watching tv','Reading'];
+      function hobby(hobbies){
+         hobbies.toString();
       }
       function pushHobby(hob1,element){
           hob1.push(element);
@@ -13,22 +31,21 @@
       function popHobby(hob2){
           hob2.pop();
       }
-      function removeHobby(hob3,i,j){
-          hob3.splice(i,j);
+      function delHobby(hob3,i,j){
+          hob3.splice(i,j); 
       }
-      var arr=['Drawing','Cooking','Watching tv','Reading'];
       console.log("Array ");
-      hobby(arr);
-      console.log(arr);
-      pushHobby(arr,'Photography');
+      hobby(h);
+      console.log(h);
+      pushHobby(h,'Photography');
       console.log("Inserting");
-      console.log(arr);
-      popHobby(arr);
+      console.log(h);
+      popHobby(h);
       console.log("Deleting");
-      console.log(arr);
-      removeHobby(arr,2,1);
-      console.log("Remove an element by using splice(using index range)");
-      console.log(arr);
+      console.log(h);
+      delHobby(h,1,1);
+      console.log("Remove an element using splice");
+      console.log(h);
 
 
   </script>
