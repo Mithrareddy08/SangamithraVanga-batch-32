@@ -1,0 +1,53 @@
+<html>
+  <head>
+    <title>My Profile</title>
+  </head>
+  <body>
+    <u><h1>My Profile</h1></u>
+    <form id="Profile">
+      <label for="firstName">First Name:</label>
+      <input type="text" id="firstName" required><br>
+      <label for="lastName">Last Name:</label>
+      <input type="text" id="lastName" required><br>
+      <label for="dob">DOB:</label>
+      <input type="text" id="dob" required><br>
+      <label for="email">Email:</label>
+      <input type="text" id="email" required><br>
+      <label for="contact">Contact Number:</label>
+      <input type="text" id="contact" required><br>
+      <input type="submit" value="Submit" onclick="display(event)">
+    </form>
+    <h2>Details:</h2>
+    <div id="details"></div>
+    <script>
+      function display(event) {
+        event.preventDefault();
+        var firstName = document.getElementById("firstName").value;
+        var lastName = document.getElementById("lastName").value;
+        var dob = document.getElementById("dob").value;
+        var email = document.getElementById("email").value;
+        var contactNumber = document.getElementById("contact").value;
+
+        var profile = {
+          firstName: firstName,
+          lastName: lastName,
+          dob: dob,
+          email: email,
+          contactNumber: contactNumber
+        };
+
+        var details = document.getElementById("details");
+        details.innerHTML = "";
+
+        for (var key in profile) {
+          if (profile.hasOwnProperty(key)) {
+            var value = profile[key];
+            var div = document.createElement("div");
+            div.innerHTML = "<strong>" + key + ":</strong> " + value;
+            details.appendChild(div);
+          }
+        }
+      }
+    </script>
+  </body>
+</html>
