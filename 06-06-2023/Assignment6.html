@@ -1,0 +1,79 @@
+<html>
+  <head>
+    <title>My Profile</title>
+  </head>
+  <body>
+    <u><h1>My Profile</h1></u>
+    <form id="Profile">
+      <label for="firstName">First Name:</label>
+      <input type="text" id="firstName" required><br>
+
+      <label for="lastName">Last Name:</label>
+      <input type="text" id="lastName" required><br>
+
+      <label for="dob">DOB:</label>
+      <input type="date" id="dob" name="dob" required><br>
+
+      <label for="gender">Gender:</label>
+      <input type="radio" id="male" name="gender" value="Male" required>
+      <label for="male">Male</label>
+      <input type="radio" id="female" name="gender" value="Female" required>
+      <label for="female">Female</label><br>
+
+      <label for="email">Email:</label>
+      <input type="text" id="email" required><br>
+
+      <label for="contact">Contact Number:</label>
+      <input type="text" id="contact" required><br>
+
+      <label for="hobbies">Hobbies:</label>
+      <input type="checkbox" id="hobby1" name="hobbies" value="Drawing">
+      <label for="hobby1">Drawing</label>
+      <input type="checkbox" id="hobby2" name="hobbies" value=" Watching Tv">
+      <label for="hobby2">Watching Tv</label>
+      <input type="checkbox" id="hobby3" name="hobbies" value=" Reading">
+      <label for="hobby3">Reading</label>
+      <input type="checkbox" id="hobby4" name="hobbies" value=" Cooking">
+      <label for="hobby4">Cooking</label><br>
+
+      <input type="submit" value="Submit" onclick="display(event)">
+    </form>
+    <h2>Details:</h2>
+    <div id="details"></div>
+    <script>
+      function display(event) {
+        event.preventDefault();
+        var firstName = document.getElementById("firstName").value;
+        var lastName = document.getElementById("lastName").value;
+        var dob = document.getElementById("dob").value;
+        var gender = document.querySelector('input[name="gender"]:checked').value;
+        var email = document.getElementById("email").value;
+        var contactNumber = document.getElementById("contact").value;
+        var hobbiesArray = Array.from(document.querySelectorAll('input[name="hobbies"]:checked')).map(function(hobby) {
+          return hobby.value;
+        });
+        var profile = {
+          firstName: firstName,
+          lastName: lastName,
+          dob: dob,
+          gender: gender,
+          email: email,
+          contactNumber: contactNumber,
+          hobbies: hobbiesArray
+        };
+
+        var details = document.getElementById("details");
+        details.innerHTML = "";
+
+        for (var key in profile) {
+          if (profile.hasOwnProperty(key)) {
+            var value = profile[key];
+            var div = document.createElement("div");
+            div.innerHTML = "<strong>" + key + ":</strong> " + value;
+            details.appendChild(div);
+          }
+        }
+      }
+    </script>
+  </body>
+</html>
