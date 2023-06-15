@@ -1,0 +1,17 @@
+<html>
+<table>
+  <tr>
+  <td>Profile</td>
+  </tr>
+  <tr>
+  <td>Contact</td>
+  </tr>
+  <tr>
+    <button *ngIf="login" (click)="toggleMenu()">Log In</button>
+  <button *ngIf="!login" (click)="toggleMenu()">Log Out</button>
+  </tr>
+  <tr>
+  <td>Search: <input type="search"></td>
+  </tr>
+</table>
+</html>

@@ -1,0 +1,12 @@
+table{
+    
+    background-color: #1a89bc;
+    color: white;
+    border-spacing: 40px;
+    font-size: 15px;
+    text-align: left;
+  }
+  table
+  tr td {
+    padding: 10px;
+  }

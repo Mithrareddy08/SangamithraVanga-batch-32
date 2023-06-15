@@ -1,0 +1,15 @@
+<html>
+  <header><table>
+  <tr>
+    <th>Profile</th>
+    <th>Contact</th>
+
+    
+    <button *ngIf="login" (click)="toggleMenu()">Log In</button>
+    <button *ngIf="!login" (click)="toggleMenu()">Log Out</button>
+    <th>Search: <input type="search"></th>
+   
+  </tr>
+</table>
+  </header>
+</html>
